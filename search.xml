@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>javascript思维导图</title>
+    <url>/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="JS思维导图汇总"><a href="#JS思维导图汇总" class="headerlink" title="JS思维导图汇总"></a>JS思维导图汇总</h1><hr>
+<h2 id="1-JavaScript变量"><a href="#1-JavaScript变量" class="headerlink" title="1.JavaScript变量"></a>1.JavaScript变量</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031424088288890.gif"></p>
+<h2 id="2-JavaScript运算符"><a href="#2-JavaScript运算符" class="headerlink" title="2.JavaScript运算符"></a>2.JavaScript运算符</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031425524532800.gif"></p>
+<h2 id="3-JavaScript数组"><a href="#3-JavaScript数组" class="headerlink" title="3.JavaScript数组"></a>3.JavaScript数组</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031426347503011.gif"></p>
+<h2 id="4-JavaScript流程语句"><a href="#4-JavaScript流程语句" class="headerlink" title="4.JavaScript流程语句"></a>4.JavaScript流程语句</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031427375004707.gif"></p>
+<h2 id="5-JavaScript字符串函数"><a href="#5-JavaScript字符串函数" class="headerlink" title="5.JavaScript字符串函数"></a>5.JavaScript字符串函数</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031428564386592.gif"></p>
+<h2 id="6-JavaScript函数基础"><a href="#6-JavaScript函数基础" class="headerlink" title="6.JavaScript函数基础"></a>6.JavaScript函数基础</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031429317505536.gif"></p>
+<h2 id="7-JavaScript基础DOM操作"><a href="#7-JavaScript基础DOM操作" class="headerlink" title="7.JavaScript基础DOM操作"></a>7.JavaScript基础DOM操作</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031430098606493.gif"><br><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/291310116771993.jpg"></p>
+<h2 id="8-JavaScript基础BOM操作"><a href="#8-JavaScript基础BOM操作" class="headerlink" title="8.JavaScript基础BOM操作"></a>8.JavaScript基础BOM操作</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/291311256619962.jpg"></p>
+<h2 id="9-JavaScript正则表达式"><a href="#9-JavaScript正则表达式" class="headerlink" title="9.JavaScript正则表达式"></a>9.JavaScript正则表达式</h2><p><img src="/2020/06/28/javascript%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/031430427829068.gif"></p>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
   </entry>
 </search>

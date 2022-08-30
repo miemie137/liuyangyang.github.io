@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nginx - 刘杨杨的个人博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="lyy,"> 
+    <meta name="description" content="刘杨杨,##Nginx###Nginx的产生Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）,"> 
+    <meta name="author" content="刘杨杨"> 
+    <link rel="alternative" href="atom.xml" title="刘杨杨的个人博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Nginx - 刘杨杨的个人博客"/>
+    <meta name="twitter:description" content="刘杨杨,##Nginx###Nginx的产生Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="刘杨杨的个人博客"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Nginx - 刘杨杨的个人博客"/>
+    <meta property="og:description" content="刘杨杨,##Nginx###Nginx的产生Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">刘杨杨的个人博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://miemie137.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Nginx</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Nginx</h1>
+        <div class="stuff">
+            <span>八月 30, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>##Nginx<br>###Nginx的产生<br>Nginx 同 Apache 一样都是一种 <strong>Web 服务器</strong>。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）URI 或者统一资源定位符（Uniform Resources Locator）URL 作为沟通依据，通过 HTTP 协议提供各种网络服务。<br>然而，这些服务器在设计之初受到当时环境的局限，例如当时的用户规模，网络带宽，产品特点等局限并且各自的定位和发展都不尽相同。这也使得各个 Web 服务器有着各自鲜明的特点。<br>Apache 的发展时期很长，而且是毫无争议的世界第一大服务器。它有着很多优点：稳定、开源、跨平台等等。<br>它出现的时间太长了，它兴起的年代，互联网产业远远比不上现在。所以它被设计为一个重量级的。<br>它不支持高并发的服务器。在 Apache 上运行数以万计的并发访问，会导致服务器消耗大量内存。<br>操作系统对其进行进程或线程间的切换也消耗了大量的 CPU 资源，导致 HTTP 请求的平均响应速度降低。<br>这些都决定了 Apache 不可能成为高性能 Web 服务器，<strong>轻量级高并发服务器 Nginx 就应运而生了</strong>。</p>
+<p>由于以下这几点，所以，Nginx 火了：</p>
+<ul>
+<li><p>Nginx 使用基于事件驱动架构，使得其可以支持数以百万级别的 TCP 连接。</p>
+</li>
+<li><p>高度的模块化和自由软件许可证使得第三方模块层出不穷。</p>
+</li>
+<li><p>Nginx 是一个跨平台服务器，可以运行在 Linux、Windows、FreeBSD、Solaris、AIX、Mac OS 等操作系统上。</p>
+</li>
+</ul>
+<p>###Nginx 基本概念<br>####1、正向代理与反向代理<br>nginx是一个高性能的反向代理服务器,那么什么是反向代理呢？</p>
+<p><strong>代理是在服务器和客户端之间假设的一层服务器，代理将接收客户端的请求并将它转发给服务器，然后将服务端的响应转发给客户端。</strong></p>
+<p>不管是正向代理还是反向代理，实现的都是上面的功能。</p>
+<p>如果你对OSI 七层模型与 TCP/IP 四层模型不是很熟悉可以再回顾下</p>
+<p><img src="/2022/08/30/Nginx/nginx_1.png" alt="assets/img/nginx_1.png"></p>
+<p>#####正向代理<br>正向代理（forward）意思是一个位于客户端和原始服务器 (origin server) 之间的服务器，</p>
+<p>为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标 (原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。</p>
+<p>正向代理是为我们服务的，即为客户端服务的，客户端可以根据正向代理访问到它本身无法访问到的服务器资源。</p>
+<p>正向代理对我们是透明的，对服务端是非透明的，即服务端并不知道自己收到的是来自代理的访问还是来自真实客户端的访问。</p>
+<p>#####反向代理<br>反向代理（Reverse Proxy）方式是指以代理服务器来接受 internet 上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。</p>
+<p>反向代理是为服务端服务的，反向代理可以帮助服务器接收来自客户端的请求，帮助服务器做请求转发，负载均衡等。</p>
+<p>反向代理对服务端是透明的，对我们是非透明的，即我们并不知道自己访问的是代理服务器，而服务器知道反向代理在为他服务。</p>
+<p>####2、负载均衡<br>如果请求数过大，单个服务器解决不了，我们增加服务器的数量，然后将请求分发到各个服务器上，将原先请求集中到单个服务器的情况改为请求分发到多个服务器上，就是负载均衡。</p>
+<p>Upstream 指定后端服务器地址列表，在 server 中拦截响应请求，并将请求转发到 Upstream 中配置的服务器列表。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">upstream balanceServer &#123;</span><br><span class="line">server <span class="number">10.1</span><span class="number">.22</span><span class="number">.33</span>:<span class="number">12345</span>;</span><br><span class="line">server <span class="number">10.1</span><span class="number">.22</span><span class="number">.34</span>:<span class="number">12345</span>;</span><br><span class="line"></span><br><span class="line">    server <span class="number">10.1</span><span class="number">.22</span><span class="number">.35</span>:<span class="number">12345</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">server_name  fe.<span class="property">server</span>.<span class="property">com</span>;</span><br><span class="line">listen <span class="number">80</span>;</span><br><span class="line">location /api &#123;</span><br><span class="line">proxy_pass <span class="attr">http</span>:<span class="comment">//balanceServer;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的配置只是指定了 nginx 需要转发的服务端列表，并没有指定分配策略。</p>
+<p>默认情况下采用的是轮询策略，将所有客户端请求轮询分配给服务端。这种策略是可以正常工作的，但是如果其中某一台服务器压力太大，出现延迟，会影响所有分配在这台服务器下的用户。</p>
+<p>Nginx支持的负载均衡调度算法方式如下：</p>
+<p>weight轮询(默认，常用)：接收到的请求按照权重分配到不同的后端服务器，即使在使用过程中，某一台后端服务器宕机，Nginx会自动将该服务器剔除出队列，请求受理情况不会受到任何影响。这种方式下，可以给不同的后端服务器设置一个权重值(weight)，用于调整不同的服务器上请求的分配率；权重数据越大，被分配到请求的几率越大；该权重值，主要是针对实际工作环境中不同的后端服务器硬件配置进行调整的。ip_hash（常用）：每个请求按照发起客户端的ip的hash结果进行匹配，这样的算法下一个固定ip地址的客户端总会访问到同一个后端服务器，这也在一定程度上解决了集群部署环境下session共享的问题。</p>
+<p>fair：智能调整调度算法，动态的根据后端服务器的请求处理到响应的时间进行均衡分配，响应时间短处理效率高的服务器分配到请求的概率高，响应时间长处理效率低的服务器分配到的请求少；结合了前两者的优点的一种调度算法。但是需要注意的是Nginx默认不支持fair算法，如果要使用这种调度算法，请安装upstream_fair模块。url_hash：按照访问的url的hash结果分配请求，每个请求的url会指向后端固定的某个服务器，可以在Nginx作为静态服务器的情况下提高缓存效率。同样要注意Nginx默认不支持这种调度算法，要使用的话需要安装Nginx的hash软件包。</p>
+<p>####3、动静分离<br>为了加快服务器的解析速度，可以把动态页面和静态页面交给不同的服务器来解析，加快解析速度，降低原来单个服务器的压力。</p>
+<p>####4、Nginx常用命令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 快速关闭<span class="title class_">Nginx</span>，可能不保存相关信息，并迅速终止web服务</span><br><span class="line">nginx -s stop</span><br><span class="line"># 平稳关闭<span class="title class_">Nginx</span>，保存相关信息，有安排的结束web服务</span><br><span class="line">nginx -s quit</span><br><span class="line"># 因改变了<span class="title class_">Nginx</span>相关配置，需要重新加载配置而重载</span><br><span class="line">nginx -s reload</span><br><span class="line"># 重新打开日志文件</span><br><span class="line">nginx -s reopen</span><br><span class="line"># 为 <span class="title class_">Nginx</span> 指定一个配置文件，来代替缺省的</span><br><span class="line">nginx -c filename</span><br><span class="line"># 不运行，而仅仅测试配置文件。nginx 将检查配置文件的语法的正确性，并尝试打开配置文件中所引用到的文件</span><br><span class="line">nginx -t</span><br><span class="line">#  显示 nginx 的版本</span><br><span class="line">nginx -v</span><br><span class="line"># 显示 nginx 的版本，编译器版本和配置参数</span><br><span class="line">nginx -V</span><br><span class="line"># 格式换显示 nginx 配置参数</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> nginx -V | xargs -n1</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> nginx -V | xargs -n1 | grep lua</span><br></pre></td></tr></table></figure>
+<p>###为什么选择Nginx<br>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。在Nginx网站上，其功能包括：</p>
+<ul>
+<li><p>HTTP和HTTPS（TLS / SSL / SNI）</p>
+</li>
+<li><p>超快速的Web服务器用于静态内容</p>
+</li>
+<li><p>FastCGI，WSGI，SCGI用于动态内容</p>
+</li>
+<li><p>具有负载平衡和缓存功能的加速Web代理</p>
+</li>
+<li><p>不间断实时二进制升级和配置</p>
+</li>
+<li><p>压缩和内容过滤器</p>
+</li>
+<li><p>虚拟主机</p>
+</li>
+<li><p>FLV和MP4的媒体流</p>
+</li>
+<li><p>带宽和连接策略</p>
+</li>
+<li><p>全面的访问控制</p>
+</li>
+<li><p>自定义日志</p>
+</li>
+<li><p>嵌入式脚本</p>
+</li>
+<li><p>带有TLS的SMTP / IMAP / POP3的邮件代理</p>
+</li>
+<li><p>逻辑，灵活，可扩展的配置</p>
+</li>
+<li><p>在Linux，FreeBSD，Mac OS X，Solaris和Windows上运行</p>
+</li>
+</ul>
+<p>###Nginx有如下优势：<br>1、IO多路复用epoll（IO复用）</p>
+<p>有A、B、C三个老师，他们都遇到一个难题，要帮助一个班级的学生解决课堂作业。</p>
+<p>老师A采用从第一排开始一个学生一个学生轮流解答的方式去回答问题，老师A浪费了很多时间，并且有的学生作业还没有完成呢，老师就来了，反反复复效率极慢。</p>
+<p>老师B是一个忍者，他发现老师A的方法行不通，于是他使用了影分身术，分身出好几个自己同一时间去帮好几个同学回答问题，最后还没回答完，老师B消耗光了能量累倒了。</p>
+<p>老师C比较精明，他告诉学生，谁完成了作业举手，有举手的同学他才去指导问题，他让学生主动发声，分开了“并发”。</p>
+<p>这个老师C就是Nginx。</p>
+<p>2、轻量级</p>
+<p>功能模块少 - Nginx仅保留了HTTP需要的模块，其他都用插件的方式，后天添加</p>
+<p>代码模块化 - 更适合二次开发，如阿里巴巴Tengine</p>
+<p>3、CPU亲和</p>
+<p>把CPU核心和Nginx工作进程绑定，把每个worker进程固定在一个CPU上执行，减少切换CPU的cache miss，从而提高性能。</p>
+<p>###Nginx配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#打开主配置文件，若你是用lnmp环境安装</span><br><span class="line">vim /usr/local/nginx/conf/nginx.<span class="property">conf</span></span><br><span class="line"></span><br><span class="line">----------------------------------------</span><br><span class="line"></span><br><span class="line">user                    #设置nginx服务的系统使用用户</span><br><span class="line">worker_processes        #工作进程数 一般情况与<span class="variable constant_">CPU</span>核数保持一致</span><br><span class="line">error_log               #nginx的错误日志</span><br><span class="line">pid                     #nginx启动时的pid</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">worker_connections    #每个进程允许最大连接数</span><br><span class="line">use                   #nginx使用的内核模型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们使用 nginx 的 http 服务，在配置文件 nginx.conf 中的 http 区域内，配置无数个 server ，每一个 server 对应这一个虚拟主机或者域名。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">... ...        #后面再详细介绍 http 配置项目</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen <span class="number">80</span>                          #监听端口;</span><br><span class="line">        server_name localhost              #地址</span><br><span class="line">        </span><br><span class="line">        location / &#123;                       #访问首页路径</span><br><span class="line">            root /xxx/xxx/index.<span class="property">html</span>       #默认目录</span><br><span class="line">            index index.<span class="property">html</span> index.<span class="property">htm</span>     #默认文件</span><br><span class="line">        &#125;        </span><br><span class="line">        </span><br><span class="line">        error_page  <span class="number">500</span> <span class="number">504</span>   /50x.<span class="property">html</span>    #当出现以上状态码时从新定义到50x.<span class="property">html</span></span><br><span class="line">        location = /50x.<span class="property">html</span> &#123;             #当访问50x.<span class="property">html</span>时</span><br><span class="line">            root /xxx/xxx/html             #50x.<span class="property">html</span> 页面所在位置</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    server &#123;</span><br><span class="line">        ... ... </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个 server 可以出现多个 location ，我们对不同的访问路径进行不同情况的配置。</p>
+<p>我们再来看看 http 的配置详情</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">sendfile  on                  #高效传输文件的模式 一定要开启</span><br><span class="line">keepalive_timeout   <span class="number">65</span>        #客户端服务端请求超时时间</span><br><span class="line">log_format  main   <span class="variable constant_">XXX</span>        #定义日志格式 代号为main</span><br><span class="line">access_log  /usr/local/access.<span class="property">log</span>  main     #日志保存地址 格式代码 main</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是 nginx 一些配置中常用的内置全局变量，你可以在配置的任何位置使用它们。</p>
+<p><img src="/2022/08/30/Nginx/nginx_2.png" alt="Nginx/nginx_2.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

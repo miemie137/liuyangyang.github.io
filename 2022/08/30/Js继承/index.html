@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Js继承 - 刘杨杨的个人博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="lyy,"> 
+    <meta name="description" content="刘杨杨,##继承###JavaScript常见的继承方式：
+
+原型链继承
+构造函数继承（借助 call）
+组合继承
+原型式继承
+寄生式继承
+寄生组合式继承
+原型链继承
+
+####原型链继承是比较常见的继承方,"> 
+    <meta name="author" content="刘杨杨"> 
+    <link rel="alternative" href="atom.xml" title="刘杨杨的个人博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Js继承 - 刘杨杨的个人博客"/>
+    <meta name="twitter:description" content="刘杨杨,##继承###JavaScript常见的继承方式：
+
+原型链继承
+构造函数继承（借助 call）
+组合继承
+原型式继承
+寄生式继承
+寄生组合式继承
+原型链继承
+
+####原型链继承是比较常见的继承方,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="刘杨杨的个人博客"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Js继承 - 刘杨杨的个人博客"/>
+    <meta property="og:description" content="刘杨杨,##继承###JavaScript常见的继承方式：
+
+原型链继承
+构造函数继承（借助 call）
+组合继承
+原型式继承
+寄生式继承
+寄生组合式继承
+原型链继承
+
+####原型链继承是比较常见的继承方,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">刘杨杨的个人博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://miemie137.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Js继承</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Js继承</h1>
+        <div class="stuff">
+            <span>八月 30, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>##继承<br>###JavaScript常见的继承方式：</p>
+<ul>
+<li>原型链继承</li>
+<li>构造函数继承（借助 call）</li>
+<li>组合继承</li>
+<li>原型式继承</li>
+<li>寄生式继承</li>
+<li>寄生组合式继承</li>
+<li>原型链继承</li>
+</ul>
+<p>####原型链继承<br>是比较常见的继承方式之一，其中涉及的构造函数、原型和实例，三者之间存在着一定的关系，即每一个构造函数都有一个原型对象，原型对象又包含一个指向构造函数的指针，而实例则包含一个原型对象的指针 </p>
+<p><font color="red">问题：两个实例使用的是同一个原型对象，内存空间是共享的</font></p>
+<p>####构造函数继承</p>
+<p>借助 call调用Parent函数</p>
+<p>可以看到，父类原型对象中一旦存在父类之前自己定义的方法，那么子类将无法继承这些方法</p>
+<p><font color="red">问题:相比第一种原型链继承方式，父类的引用属性不会被共享，优化了第一种继承方式的弊端，但是只能继承父类的实例属性和方法，不能继承原型属性或者方法</font></p>
+<p>####组合继承</p>
+<p>前面我们讲到两种继承方式，各有优缺点。组合继承则将前两种方式继承起来</p>
+<p><font color="red">问题：这种方式看起来就没什么问题，方式一和方式二的问题都解决了，但是从上面代码我们也可以看到Parent3 执行了两次，造成了多构造一次的性能开销</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一次调用 Parent3()  </span></span><br><span class="line"><span class="title class_">Child3</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Parent3</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Child3</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="comment">// 第二次调用 Parent3()</span></span><br><span class="line">    <span class="title class_">Parent3</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">type</span> = <span class="string">&#x27;child3&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####原型式继承<br>这里主要借助Object.create方法实现普通对象的继承</p>
+<p><font color="red">问题：这种继承方式的缺点也很明显，因为Object.create方法实现的是浅拷贝，多个实例的引用类型属性指向相同的内存，存在篡改的可能</font><br>####寄生式继承<br>寄生式继承在上面继承基础上进行优化，利用这个浅拷贝的能力再进行增强，添加一些方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> parent5 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;parent5&quot;</span>,</span><br><span class="line">    <span class="attr">friends</span>: [<span class="string">&quot;p1&quot;</span>, <span class="string">&quot;p2&quot;</span>, <span class="string">&quot;p3&quot;</span>],</span><br><span class="line">    <span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">clone</span>(<span class="params">original</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> clone = <span class="title class_">Object</span>.<span class="title function_">create</span>(original);</span><br><span class="line">    clone.<span class="property">getFriends</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">friends</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person5 = <span class="title function_">clone</span>(parent5);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person5.<span class="title function_">getName</span>()); <span class="comment">// parent5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person5.<span class="title function_">getFriends</span>()); <span class="comment">// [&quot;p1&quot;, &quot;p2&quot;, &quot;p3&quot;]</span></span><br></pre></td></tr></table></figure>
+<p>其优缺点也很明显，跟上面讲的原型式继承一样<br>####寄生组合式继承<br>寄生组合式继承，借助解决普通对象的继承问题的Object.create 方法，在几种继承方式的优缺点基础上进行改造，这也是所有继承方式里面相对最优的继承方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">clone</span> (parent, child) &#123;</span><br><span class="line">    <span class="comment">// 这里改用 Object.create 就可以减少组合继承中多进行一次构造的过程</span></span><br><span class="line">    child.<span class="property"><span class="keyword">prototype</span></span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(parent.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line">    child.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">constructor</span> = child;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Parent6</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&#x27;parent6&#x27;</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">play</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Parent6</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getName</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Child6</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Parent6</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">friends</span> = <span class="string">&#x27;child5&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">clone</span>(<span class="title class_">Parent6</span>, <span class="title class_">Child6</span>);</span><br><span class="line"><span class="title class_">Child6</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getFriends</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">friends</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person6 = <span class="keyword">new</span> <span class="title class_">Child6</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person6); <span class="comment">//&#123;friends:&quot;child5&quot;,name:&quot;child5&quot;,play:[1,2,3],__proto__:Parent6&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person6.<span class="title function_">getName</span>()); <span class="comment">// parent6</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person6.<span class="title function_">getFriends</span>()); <span class="comment">// child5</span></span><br><span class="line"></span><br><span class="line">可以看到 person6 打印出来的结果，属性都得到了继承，方法也没问题</span><br><span class="line">文章一开头，我们是使用<span class="title class_">ES6</span> 中的<span class="keyword">extends</span>关键字直接实现 <span class="title class_">JavaScript</span>的继承</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 原型方法</span></span><br><span class="line">    <span class="comment">// 即 Person.prototype.getName = function() &#123; &#125;</span></span><br><span class="line">    <span class="comment">// 下面可以简写为 getName() &#123;...&#125;</span></span><br><span class="line">    getName = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Person:&#x27;</span>, <span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Gamer</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">        <span class="comment">// 子类中存在构造函数，则需要在使用“this”之前首先调用 super()。</span></span><br><span class="line">        <span class="variable language_">super</span>(name)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> asuna = <span class="keyword">new</span> <span class="title class_">Gamer</span>(<span class="string">&#x27;Asuna&#x27;</span>, <span class="number">20</span>)</span><br><span class="line">asuna.<span class="title function_">getName</span>() <span class="comment">// 成功访问到父类的方法</span></span><br></pre></td></tr></table></figure>
+<p>利用babel工具进行转换，我们会发现extends实际采用的也是寄生组合继承方式，因此也证明了这种方式是较优的解决继承的方式<br>###总结</p>
+<p>下面以一张图作为总结：<br><img src="/2022/08/30/Js%E7%BB%A7%E6%89%BF/jicheng.png" alt="assets/img/jicheng.png"><br>通过Object.create 来划分不同的继承方式，最后的寄生式组合继承方式是通过组合继承改造之后的最优继承方式，而 extends 的语法糖和寄生组合继承的方式基本类似</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -62,7 +62,7 @@
     <div class='main'>
         <h1 class="title">Nginx</h1>
         <div class="stuff">
-            <span>八月 30, 2022</span>
+            <span>七月 10, 2022</span>
             
   <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li></ul>
 
@@ -83,7 +83,7 @@
 <p><strong>代理是在服务器和客户端之间假设的一层服务器，代理将接收客户端的请求并将它转发给服务器，然后将服务端的响应转发给客户端。</strong></p>
 <p>不管是正向代理还是反向代理，实现的都是上面的功能。</p>
 <p>如果你对OSI 七层模型与 TCP/IP 四层模型不是很熟悉可以再回顾下</p>
-<p><img src="/2022/08/30/Nginx/nginx_1.png" alt="assets/img/nginx_1.png"></p>
+<p><img src="/2022/07/10/Nginx/nginx_1.png" alt="assets/img/nginx_1.png"></p>
 <p>#####正向代理<br>正向代理（forward）意思是一个位于客户端和原始服务器 (origin server) 之间的服务器，</p>
 <p>为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标 (原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。</p>
 <p>正向代理是为我们服务的，即为客户端服务的，客户端可以根据正向代理访问到它本身无法访问到的服务器资源。</p>
@@ -157,7 +157,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">sendfile  on                  #高效传输文件的模式 一定要开启</span><br><span class="line">keepalive_timeout   <span class="number">65</span>        #客户端服务端请求超时时间</span><br><span class="line">log_format  main   <span class="variable constant_">XXX</span>        #定义日志格式 代号为main</span><br><span class="line">access_log  /usr/local/access.<span class="property">log</span>  main     #日志保存地址 格式代码 main</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>下面是 nginx 一些配置中常用的内置全局变量，你可以在配置的任何位置使用它们。</p>
-<p><img src="/2022/08/30/Nginx/nginx_2.png" alt="Nginx/nginx_2.png"></p>
+<p><img src="/2022/07/10/Nginx/nginx_2.png" alt="Nginx/nginx_2.png"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
